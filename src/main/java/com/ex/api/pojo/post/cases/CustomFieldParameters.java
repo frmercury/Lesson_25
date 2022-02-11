@@ -1,6 +1,7 @@
 package com.ex.api.pojo.post.cases;
 
 public class CustomFieldParameters {
+
     public String getContent() {
         return content;
     }
@@ -19,7 +20,5 @@ public class CustomFieldParameters {
 
     protected String content;
     protected String expected;
-
-
 }
 
