@@ -20,5 +20,5 @@ public class CustomFieldParameters {
 
     protected String content;
     protected String expected;
-}
 
+}
