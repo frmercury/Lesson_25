@@ -39,7 +39,7 @@ public class WebDriverManagerClass {
 
     public static WebDriver getWebDriver() {
 
-        String browser = "chrome_selenoid";
+        String browser = "chrome";
         if (webDriver == null) {
             new WebDriverManagerClass(browser);
         }

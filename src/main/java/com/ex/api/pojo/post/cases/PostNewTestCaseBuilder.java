@@ -7,6 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostNewTestCaseBuilder {
+
+    private String title;
+    private int type_id;
+    private int template_id;
+    private int priority_id;
+    private String estimate;
+
     public String getTitle() {
         return title;
     }
@@ -23,10 +30,9 @@ public class PostNewTestCaseBuilder {
         return priority_id;
     }
 
-    private String title;
-    private int type_id;
-    private int template_id;
-    private int priority_id;
+    public String getEstimate() {
+        return estimate;
+    }
 
     private List<CustomFieldParameters> custom_steps_separated = new ArrayList<>();
 
@@ -34,7 +40,6 @@ public class PostNewTestCaseBuilder {
         return custom_steps_separated;
     }
 
-//    private Duration estimate;
 
     public static Builder getTestCaseBuilder() {
         return new PostNewTestCaseBuilder().new Builder();
@@ -70,6 +75,11 @@ public class PostNewTestCaseBuilder {
             step1.setContent("content");
             step1.setExpected("expected");
             custom_steps_separated.add(step1);
+            return this;
+        }
+
+        public Builder setEstimate(String Estimate) {
+            estimate = Estimate;
             return this;
         }
 

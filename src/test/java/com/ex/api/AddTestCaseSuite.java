@@ -26,6 +26,7 @@ public class AddTestCaseSuite extends BaseTest {
                         .setType_id(3)
                         .setPriority_id(2)
                         .setCustom_steps_separated()
+                        .setEstimate("1m")
                         .build());
         /**
          * Получение id созданного тест-кейса
