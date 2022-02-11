@@ -35,6 +35,7 @@ public class AddTestCaseSuite extends BaseTest {
         Response stepCaseResponse = (Response) stepTestCase.get("response");
         JSONObject stepCaseJsonObject = new JSONObject(stepCaseResponse.asString());
         String stepCaseID = String.valueOf(stepCaseJsonObject.get("id"));
+
         /**
          * Проверка условия через отдельный метод GET (POST возвращает аналогичный респонс)
          */
