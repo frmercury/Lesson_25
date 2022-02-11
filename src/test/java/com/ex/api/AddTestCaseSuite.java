@@ -31,6 +31,7 @@ public class AddTestCaseSuite extends BaseTest {
         /**
          * Получение id созданного тест-кейса
          */
+
         Response stepCaseResponse = (Response) stepTestCase.get("response");
         JSONObject stepCaseJsonObject = new JSONObject(stepCaseResponse.asString());
         String stepCaseID = String.valueOf(stepCaseJsonObject.get("id"));
