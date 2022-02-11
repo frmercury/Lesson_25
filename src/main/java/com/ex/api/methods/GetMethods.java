@@ -8,18 +8,16 @@ import static io.restassured.RestAssured.given;
 
 public class GetMethods extends BaseParameters {
 
-    public Response withPreemptiveBasic (String resource,String queryParam, String body) {
+    public Response withPreemptiveBasic (String resource,String queryParam) {
 
         RestAssured.baseURI = testrail1235;
 
         return given()
                 .auth()
                 .preemptive().basic(email, password)
-                .contentType(ContentType.JSON)
                 .queryParam(queryParam)
-                .body(body)
                 .when()
-                .post(resource)
+                .get(resource)
                 .then()
                 .extract()
                 .response();

@@ -1,5 +1,6 @@
 package com.ex.ui;
 
+import com.ex.WebDriverManagerClass;
 import com.ex.ui.TestRailQA.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;

@@ -39,20 +39,20 @@ public class TestRailQASuite extends BaseTest {
                     .checkStatusModification();
         }
 
-    /**
-     * Вопрос
-     */
-    @Test
-    public void newTestCaseStatusModificationTest(){
-        new DashboardPage(webDriver)
-                .clickOnTestRunsLink();
-        new TestRunsResultsPage(webDriver)
-                .addNewTestRun();
-        new NewTestRunCreationPage(webDriver)
-                .fillRunTitleInput()
-                .fillDescriptionField()
-                .clickAddTestCaseButton();
-        new TestRunPage(webDriver)
-                .randomCaseSelection();
-    }
+//    /**
+//     * Вопрос
+//     */
+//    @Test
+//    public void newTestCaseStatusModificationTest(){
+//        new DashboardPage(webDriver)
+//                .clickOnTestRunsLink();
+//        new TestRunsResultsPage(webDriver)
+//                .addNewTestRun();
+//        new NewTestRunCreationPage(webDriver)
+//                .fillRunTitleInput()
+//                .fillDescriptionField()
+//                .clickAddTestCaseButton();
+//        new TestRunPage(webDriver)
+//                .randomCaseSelection();
+//    }
 }

@@ -1,16 +1,16 @@
 package com.ex.api.methods;
 
+
+import com.ex.api.pojo.post.cases.PostNewTestCaseBuilder;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-
-import java.sql.Timestamp;
 
 import static io.restassured.RestAssured.given;
 
 public class PostMethods extends BaseParameters {
 
-    public Response withPreemptiveBasic (String resource,String queryParam, String body) {
+    public Response withPreemptiveBasic (String resource, String queryParam, PostNewTestCaseBuilder body) {
 
         RestAssured.baseURI = testrail1235;
 
