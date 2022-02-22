@@ -1,6 +1,7 @@
 package com.ex.api.methods;
 
 
+import com.ex.BaseParameters;
 import com.ex.api.pojo.post.cases.PostNewTestCaseBuilder;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -12,7 +13,7 @@ public class PostMethods extends BaseParameters {
 
     public Response withPreemptiveBasic (String resource, String queryParam, PostNewTestCaseBuilder body) {
 
-        RestAssured.baseURI = testrail1235;
+        RestAssured.baseURI = testrail1236;
 
         return given()
                 .auth()

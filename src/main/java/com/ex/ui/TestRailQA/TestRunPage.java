@@ -1,5 +1,6 @@
 package com.ex.ui.TestRailQA;
 
+import com.codeborne.selenide.Condition;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Random;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class TestRunPage extends BasePage {
 
@@ -19,10 +22,9 @@ public class TestRunPage extends BasePage {
     private By addResultField = By.xpath("//div[@id='addResultStatus_chzn']/a");
     private By testCaseStatuses = By.xpath("//div[@id='addResultStatus_chzn']//li");
     private By addResultButton = By.xpath("//button[@id='addResultSubmit']");
-    private By testCaseStatusDropDown = By.xpath("..//following-sibling::td[@class='js-status']/a");
 
     private By testCaseId = By.xpath("//td[@class='id']");
-
+    private String sdfgds = "";
 
 
     public TestRunPage clickRandomTestCase () {
@@ -33,21 +35,18 @@ public class TestRunPage extends BasePage {
         return this;
     }
 
-    public TestRunPage randomCaseSelection () {
+    public void randomCaseSelection () {
         List<WebElement> randomCaseCheckBoxes = webDriver.findElements(testCaseCheckBox);
         Random random = new Random();
         WebElement randomCheckBox = randomCaseCheckBoxes.get(random.nextInt(randomCaseCheckBoxes.size()));
-
-        List<WebElement> randomTestCaseStatusDropDown = randomCheckBox.findElements(testCaseStatusDropDown);
-
+        By testCaseStatusDropDown = By.xpath("..//following-sibling::td[@class='js-status']/a");
+        WebElement randomTestCaseStatusDropDown = randomCheckBox.findElement(testCaseStatusDropDown);
         randomCheckBox.click();
         clickAddResultLink().addRandomResultStatus();
-        waitForAjax(webDriver);
-
-        WebElement statusLink = randomTestCaseStatusDropDown.get(1);
-        System.out.println(statusLink.getText());
-
-        Assertions.assertThat(statusLink.getText()).doesNotMatch("Untested");
+//        By testCaseStatusDropDown = By.xpath("..//following-sibling::td[@class='js-status']/a");
+//        WebElement randomTestCaseStatusDropDown = randomCheckBox.findElement(testCaseStatusDropDown);
+//
+//        Assertions.assertThat(randomTestCaseStatusDropDown.getText()).isNotEqualTo("Untested");
 
 //        for (int i = 0; i <= 5; i++) {
 //
@@ -63,7 +62,6 @@ public class TestRunPage extends BasePage {
 //                Assertions.assertThat(randomTestCaseStatusDropDown.getAttribute("rel")).doesNotMatch("3");
 //            }
 //        }
-        return this;
     }
 
     public TestRunPage clickAddResultLink () {
@@ -71,11 +69,10 @@ public class TestRunPage extends BasePage {
         return this;
     }
 
-    public TestRunPage addRandomResultStatus() {
+    public void addRandomResultStatus() {
         findElement(webDriver, addResultField).click();
         chooseRandomCaseStatus();
         clickAddResultButton();
-        return this;
     }
 
     public void chooseRandomCaseStatus () {
@@ -87,4 +84,5 @@ public class TestRunPage extends BasePage {
     public void clickAddResultButton () {
         findElement(webDriver, addResultButton).click();
     }
+
 }

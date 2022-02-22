@@ -1,5 +1,6 @@
 package com.ex.ui.TestRailQA;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,7 +23,7 @@ public class NewTestCaseCreationPage extends BasePage{
    private By preconditionField  = By.xpath("//div[@id='custom_preconds_display']");
    private By addTestCaseButton = By.xpath("//button[@id='accept']");
 
-
+@Step("Verify Test Case Creation")
     public NewTestCaseCreationPage fillCaseTitleInput() {
         Calendar calendar = new GregorianCalendar();
         DateFormat date = new SimpleDateFormat("dd-MM-yyyy HH:mm");
