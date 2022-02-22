@@ -1,6 +1,7 @@
-package com.ex.api;
+package com.ex.api.TestRailAPI;
 
 
+import com.ex.api.BaseTest;
 import com.ex.api.pojo.post.cases.PostNewTestCaseBuilder;
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
