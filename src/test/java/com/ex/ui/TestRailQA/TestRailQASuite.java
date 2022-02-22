@@ -1,11 +1,13 @@
 package com.ex.ui.TestRailQA;
 
 import com.ex.ui.BaseTest;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 
 public class TestRailQASuite extends BaseTest {
-
-        @Test
+    @Severity(SeverityLevel.NORMAL)
+        @Test(description = "New Test Case Creation")
         public void newTestCaseCreationTest() {
             new DashboardPage(webDriver)
                     .clickOnTestCasesLink();
@@ -20,8 +22,8 @@ public class TestRailQASuite extends BaseTest {
             new TestCasesPage(webDriver)
                     .checkSuccessMessageIsDisplayed();
         }
-
-        @Test
+    @Severity(SeverityLevel.CRITICAL)
+        @Test(description = " New Test Run Creation")
         public void newTestRunCreationTest(){
             new DashboardPage(webDriver)
                     .clickOnTestRunsLink();
@@ -39,9 +41,7 @@ public class TestRailQASuite extends BaseTest {
                     .checkStatusModification();
         }
 
-//    /**
-//     * Вопрос
-//     */
+
 //    @Test
 //    public void newTestCaseStatusModificationTest(){
 //        new DashboardPage(webDriver)

@@ -1,5 +1,6 @@
 package com.ex.ui.TestRailQA;
 
+import com.ex.BaseParameters;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 

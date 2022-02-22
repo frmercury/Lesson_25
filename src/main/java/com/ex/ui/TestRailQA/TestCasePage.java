@@ -1,5 +1,6 @@
 package com.ex.ui.TestRailQA;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,7 +40,7 @@ public class TestCasePage extends BasePage{
     public void clickAddResultButtonPopUp () {
         findElement(webDriver, addResultButtonPopUp).click();
     }
-
+@Step("Check is testcase's status is modified")
     public void checkStatusModification () {
         waitForAjax(webDriver);
         Assert.assertNotEquals(findElement(webDriver, statusMark).getText(), "Untested");
