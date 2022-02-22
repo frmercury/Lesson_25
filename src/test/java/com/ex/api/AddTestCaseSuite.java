@@ -26,13 +26,16 @@ public class AddTestCaseSuite extends BaseTest {
                         .setType_id(3)
                         .setPriority_id(2)
                         .setCustom_steps_separated()
+                        .setEstimate("1m")
                         .build());
         /**
          * Получение id созданного тест-кейса
          */
+
         Response stepCaseResponse = (Response) stepTestCase.get("response");
         JSONObject stepCaseJsonObject = new JSONObject(stepCaseResponse.asString());
         String stepCaseID = String.valueOf(stepCaseJsonObject.get("id"));
+
         /**
          * Проверка условия через отдельный метод GET (POST возвращает аналогичный респонс)
          */

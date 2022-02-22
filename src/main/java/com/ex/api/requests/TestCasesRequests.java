@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TestCasesRequests extends BaseRequests {
 
     private String resource = "index.php";
-    private String postQueryParam = "/api/v2/add_case/2";
+    private String postQueryParam = "/api/v2/add_case/1";
     private String getQueryParam = "/api/v2/get_case/";
     private int expectedSC = 200;
 
