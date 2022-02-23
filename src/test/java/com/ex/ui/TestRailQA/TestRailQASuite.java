@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class TestRailQASuite extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
-        @Test(description = "New Test Case Creation")
+        @Test(testName = "New Test Case Creation")
         public void newTestCaseCreationTest() {
             new DashboardPage(webDriver)
                     .clickOnTestCasesLink();
