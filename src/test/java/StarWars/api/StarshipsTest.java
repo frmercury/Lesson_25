@@ -22,7 +22,7 @@ public class StarshipsTest {
 
         given()
                 .when()
-                .get("/starships/10/")
+                .get("/starships/10")
                 .then()
                 .log().body()
                 .statusCode(200)
@@ -30,6 +30,6 @@ public class StarshipsTest {
                 .body("manufacturer", equalTo("Corellian Engineering Corporation"),
                         "max_atmosphering_speed", equalTo("1050"),
                         "cargo_capacity", equalTo("100000"))
-                .body("pilots.size", equalTo(4));
+                .body("pilots.size()", equalTo(4));
     }
 }
