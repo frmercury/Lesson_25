@@ -3,15 +3,15 @@ package StarWars.api;
 import java.util.Arrays;
 import java.util.List;
 
-public class Converter <T> {
+public class Converter <T extends Number> {
 
-    List convertedList;
+   protected List<T> convertedList;
 
-    public <T> void numericArrayToList(T[] arr) {
+   public void numericArrayToList(T[] arr) {
        convertedList = Arrays.asList(arr);
     }
 
-   public List<T> getList() {
+   public List getList() {
         return convertedList;
    }
 
