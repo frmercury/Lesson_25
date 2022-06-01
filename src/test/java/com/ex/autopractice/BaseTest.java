@@ -8,18 +8,18 @@ import com.ex.utils.JSONUtils;
 import org.assertj.core.api.Assertions;
 import org.json.JSONObject;
 import org.openqa.selenium.Cookie;
-import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 
 import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class Cookies {
+public class BaseTest {
 
-    @Test
-    public void cookiesTest() throws IOException {
+    @BeforeClass
+    public void authCookies() throws IOException {
 
-        double sum = 78.99;
+        String mainUser = "qwerty qwerty";
 
         open("http://automationpractice.com");
         Selenide.clearBrowserCookies();
@@ -34,6 +34,6 @@ public class Cookies {
         WebDriverRunner.getWebDriver().navigate().refresh();
 
         BasePage basePage = new BasePage();
-        basePage.hoverCartShouldBeEqual(sum);
+        Assertions.assertThat(basePage.getUser().equals(mainUser)).as("Auth completed");
     }
 }
