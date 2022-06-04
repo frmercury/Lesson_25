@@ -2,7 +2,7 @@ package com.ex.autopractice;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import com.ex.automationpractice.BasePage;
+import com.ex.automationpractice.HomePage;
 import com.ex.utils.JSONUtils;
 
 import org.assertj.core.api.Assertions;
@@ -33,7 +33,7 @@ public class BaseTest {
         WebDriverRunner.getWebDriver().manage().addCookie(cookie);
         WebDriverRunner.getWebDriver().navigate().refresh();
 
-        BasePage basePage = new BasePage();
+        HomePage basePage = new HomePage();
         Assertions.assertThat(basePage.getUser().equals(mainUser)).as("Auth completed");
     }
 }

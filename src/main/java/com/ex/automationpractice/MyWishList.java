@@ -19,7 +19,7 @@ public class MyWishList extends BasePage {
         return this;
     }
 
-    public MyWishList wishElementIsDeleted() {
+    public MyWishList removeWishList() {
         wishListElementDelete.click();
 
         Alert alert = switchTo().alert();
