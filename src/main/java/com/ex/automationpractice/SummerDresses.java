@@ -1,5 +1,6 @@
 package com.ex.automationpractice;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
 import org.assertj.core.api.Assertions;
@@ -10,7 +11,7 @@ public class SummerDresses extends BasePage {
 
     private SelenideElement firstSummerDresses = $(Selectors.byXpath("//div[@class='product-container'][1]"));
     private SelenideElement addToWishList = $(Selectors.byClassName("addToWishlist"));
-    private SelenideElement addPopup = $(Selectors.byText("Added to your wishlist"));
+    private SelenideElement addPopup = $(Selectors.byText("Added to your wishlist."));
 
 
     public SummerDresses hoverFirstDress(){
@@ -24,7 +25,7 @@ public class SummerDresses extends BasePage {
     }
 
     public SummerDresses checkIsAdded(){
-        addPopup.isDisplayed();
+        addPopup.shouldBe(Condition.visible);
         return this;
     }
 

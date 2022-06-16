@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 public class BaseTest extends BaseParameters {
-    protected static WebDriver webDriver;
+    public static WebDriver webDriver;
 
     @Step("Startup browser")
     @BeforeTest
